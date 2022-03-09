@@ -1,0 +1,9 @@
+#!/bin/bash
+chmod 755 /home/ec2-user/scripts/passenger_start
+/home/ec2-user/scripts/passenger_start &
+pid=$!
+
+while ps -p $pid >/dev/null 2>&1
+do
+   sleep 10
+done
